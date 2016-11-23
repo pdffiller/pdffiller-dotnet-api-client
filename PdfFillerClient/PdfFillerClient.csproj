@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5A21ACC9-E4AE-4709-A0AA-8D3F9169F8ED}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PdfFillerClient</RootNamespace>
+    <AssemblyName>PdfFillerClient</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net35\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="APIClient\ClientWrapper.cs" />
+    <Compile Include="API\Application.cs" />
+    <Compile Include="API\Callback.cs" />
+    <Compile Include="API\CustomLogo.cs" />
+    <Compile Include="API\Document.cs" />
+    <Compile Include="API\FillableTemplate.cs" />
+    <Compile Include="API\FillRequest.cs" />
+    <Compile Include="API\SignatureRequest.cs" />
+    <Compile Include="API\Token.cs" />
+    <Compile Include="API\User.cs" />
+    <Compile Include="DTO\Application\ApplicationCreateRequest.cs" />
+    <Compile Include="DTO\Application\ApplicationDeleteResponse.cs" />
+    <Compile Include="DTO\Application\ApplicationCreateResponse.cs" />
+    <Compile Include="DTO\Application\ApplicationsListResponse.cs" />
+    <Compile Include="DTO\Auth\OAuth2Request.cs" />
+    <Compile Include="DTO\Auth\OAuth2Response.cs" />
+    <Compile Include="DTO\Callback\CallbackCreateRequest.cs" />
+    <Compile Include="DTO\Callback\CallbackCreateResponse.cs" />
+    <Compile Include="DTO\Callback\CallbackDeleteResponse.cs" />
+    <Compile Include="DTO\Callback\CallbacksListResponse.cs" />
+    <Compile Include="DTO\CustomLogo\CustomLogoCreateRequest.cs" />
+    <Compile Include="DTO\CustomLogo\CustomLogoCreateResponse.cs" />
+    <Compile Include="DTO\CustomLogo\CustomLogoDeleteResponse.cs" />
+    <Compile Include="DTO\CustomLogo\CustomLogoListResponse.cs" />
+    <Compile Include="DTO\Document\DocumentCreateRequest.cs" />
+    <Compile Include="DTO\Document\DocumentCreateResponse.cs" />
+    <Compile Include="DTO\Document\DocumentDeleteResponse.cs" />
+    <Compile Include="DTO\Document\DocumentsListResponse.cs" />
+    <Compile Include="DTO\Errors\Error.cs" />
+    <Compile Include="DTO\Errors\ErrorsList.cs" />
+    <Compile Include="DTO\FillableTemplate\FillableTemplateInfoResponse.cs" />
+    <Compile Include="DTO\FillableTemplate\FillableTemplatePopulateRequest.cs" />
+    <Compile Include="DTO\FillableTemplate\FillableTemplatePopulateResponse.cs" />
+    <Compile Include="DTO\FillableTemplate\FillableTemplateListResponse.cs" />
+    <Compile Include="DTO\FillRequest\FillRequest.cs" />
+    <Compile Include="DTO\FillRequest\FillRequestCreateRequest.cs" />
+    <Compile Include="DTO\FillRequest\FillRequestCreateResponse.cs" />
+    <Compile Include="DTO\FillRequest\FillRequestDeleteResponse.cs" />
+    <Compile Include="DTO\FillRequest\FillRequestFilledFormDeleteResponse.cs" />
+    <Compile Include="DTO\FillRequest\FillRequestFilledFormsListResponse.cs" />
+    <Compile Include="DTO\FillRequest\FillRequestListResponse.cs" />
+    <Compile Include="DTO\Messages\Message.cs" />
+    <Compile Include="DTO\SignatureRequest\AdditionalDocument.cs" />
+    <Compile Include="DTO\SignatureRequest\Recipient.cs" />
+    <Compile Include="DTO\SignatureRequest\SignatureRequestCreateRequest.cs" />
+    <Compile Include="DTO\SignatureRequest\SignatureRequestCreateResponse.cs" />
+    <Compile Include="DTO\SignatureRequest\SignatureRequestDeleteResponse.cs" />
+    <Compile Include="DTO\SignatureRequest\SignatureRequestListResponse.cs" />
+    <Compile Include="DTO\Token\TokenCreateRequest.cs" />
+    <Compile Include="DTO\Token\TokenCreateResponse.cs" />
+    <Compile Include="DTO\Token\TokenDeleteResponse.cs" />
+    <Compile Include="DTO\Token\TokensListResponse.cs" />
+    <Compile Include="DTO\User\UserResponse.cs" />
+    <Compile Include="Exceptions\PdfFillerAPIException.cs" />
+    <Compile Include="Exceptions\PdfFillerAppException.cs" />
+    <Compile Include="APIClient\IAPIClient.cs" />
+    <Compile Include="PdfFillecrAPIClient.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
